@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= tableName.charAt(0).toUpperCase() + tableName.slice(1) %> Table - Database Viewer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .back-button {
+            background: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        .back-button:hover {
+            background: #5a6268;
+        }
+        h1 {
+            margin: 0;
+            color: #333;
+            text-transform: capitalize;
+        }
+        .table-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .table-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+        }
+        .table-title {
+            font-size: 1.5em;
+            margin: 0 0 5px 0;
+        }
+        .table-subtitle {
+            margin: 0;
+            opacity: 0.9;
+        }
+        .schema-section {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .schema-title {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .columns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+        }
+        .column-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+        }
+        .column-name {
+            font-weight: bold;
+            color: #333;
+        }
+        .column-type {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .data-section {
+            padding: 20px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .data-table th,
+        .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .data-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #333;
+            position: sticky;
+            top: 0;
+        }
+        .data-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        .data-table td {
+            max-width: 200px;
+            word-wrap: break-word;
+            font-size: 0.9em;
+        }
+        .null-value {
+            color: #999;
+            font-style: italic;
+        }
+        .row-number {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            width: 50px;
+        }
+        .stats-bar {
+            background: #e9ecef;
+            padding: 10px 20px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .record-count {
+            font-weight: bold;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📋 <%= tableName.charAt(0).toUpperCase() + tableName.slice(1) %> Table</h1>
+        <a href="/" class="back-button">← Back to Tables</a>
+    </div>
+
+    <div class="table-container">
+        <div class="table-header">
+            <div class="table-title"><%= tableName.charAt(0).toUpperCase() + tableName.slice(1) %></div>
+            <div class="table-subtitle">Table Structure and Data</div>
+        </div>
+
+        <div class="schema-section">
+            <div class="schema-title">🏗️ Table Schema (<%= columns.length %> columns)</div>
+            <div class="columns-grid">
+                <% columns.forEach(column => { %>
+                <div class="column-item">
+                    <div class="column-name"><%= column.column_name %></div>
+                    <div class="column-type">
+                        <%= column.data_type %>
+                        <% if (column.is_nullable === 'NO') { %>
+                        <span style="color: #dc3545; font-weight: bold;">NOT NULL</span>
+                        <% } %>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+
+        <div class="data-section">
+            <div class="schema-title">📊 Table Data (showing up to 50 records)</div>
+            <% if (data.length > 0) { %>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th class="row-number">#</th>
+                        <% Object.keys(data[0]).forEach(key => { %>
+                        <th><%= key %></th>
+                        <% }); %>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach((row, index) => { %>
+                    <tr>
+                        <td class="row-number"><%= index + 1 %></td>
+                        <% Object.values(row).forEach(value => { %>
+                        <td>
+                            <% if (value === null || value === undefined) { %>
+                                <span class="null-value">NULL</span>
+                            <% } else if (typeof value === 'string' && value.length > 50) { %>
+                                <%= value.substring(0, 50) %>...
+                            <% } else { %>
+                                <%= value %>
+                            <% } %>
+                        </td>
+                        <% }); %>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            <% } else { %>
+            <p style="text-align: center; color: #666; padding: 40px;">No data found in this table.</p>
+            <% } %>
+        </div>
+
+        <div class="stats-bar">
+            <span class="record-count">📊 Total Records: <%= data.length %></span>
+            <span style="color: #666; font-size: 0.9em;">
+                Generated on: <%= new Date().toLocaleString() %>
+            </span>
+        </div>
+    </div>
+</body>
+</html>

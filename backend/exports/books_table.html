@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BOOKS Table</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f8f9fa; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #e3f2fd; }
+        .meta { color: #666; font-size: 0.9em; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>📋 BOOKS TABLE</h1>
+    <div class="meta">CS 665 Database Project - 15 records shown</div>
+    <table>
+        <thead>
+            <tr>
+                <th>book_id</th>
+                <th>isbn</th>
+                <th>title</th>
+                <th>price</th>
+                <th>stock_qty</th>
+                <th>publisher_id</th>
+                <th>pub_date</th>
+                <th>description</th>
+                <th>image_url</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>9780439139601</td>
+                <td>Harry Potter and the Goblet of Fire</td>
+                <td>14.99</td>
+                <td>50</td>
+                <td>1</td>
+                <td>Sat Jul 08 2000 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>The fourth book in the Harry Potter series</td>
+                <td>https://example.com/harry-potter-4.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>9780451524935</td>
+                <td>1984</td>
+                <td>13.99</td>
+                <td>75</td>
+                <td>2</td>
+                <td>Wed Jun 08 1949 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>Dystopian social science fiction novel</td>
+                <td>https://example.com/1984.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>9780141439518</td>
+                <td>Pride and Prejudice</td>
+                <td>12.99</td>
+                <td>60</td>
+                <td>1</td>
+                <td>Thu Jan 28 1813 00:00:00 GMT+0553 (India Standard Time)</td>
+                <td>Classic romance novel</td>
+                <td>https://example.com/pride-prejudice.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>9780307277671</td>
+                <td>The Shining</td>
+                <td>15.99</td>
+                <td>40</td>
+                <td>3</td>
+                <td>Fri Jan 28 1977 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>Horror novel by Stephen King</td>
+                <td>https://example.com/shining.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>9780062073488</td>
+                <td>Murder on the Orient Express</td>
+                <td>14.49</td>
+                <td>35</td>
+                <td>2</td>
+                <td>Mon Jan 01 1934 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>Classic mystery novel by Agatha Christie</td>
+                <td>https://example.com/orient-express.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>9780553293357</td>
+                <td>Foundation</td>
+                <td>16.99</td>
+                <td>45</td>
+                <td>4</td>
+                <td>Tue May 01 1951 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>Science fiction novel by Isaac Asimov</td>
+                <td>https://example.com/foundation.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>9780345391803</td>
+                <td>I Know Why the Caged Bird Sings</td>
+                <td>13.49</td>
+                <td>55</td>
+                <td>3</td>
+                <td>Wed Jan 01 1969 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>Autobiography by Maya Angelou</td>
+                <td>https://example.com/caged-bird.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>9780316017930</td>
+                <td>Outliers</td>
+                <td>17.99</td>
+                <td>65</td>
+                <td>2</td>
+                <td>Tue Nov 18 2008 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>Pop psychology book by Malcolm Gladwell</td>
+                <td>https://example.com/outliers.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>9781451648539</td>
+                <td>Steve Jobs</td>
+                <td>18.99</td>
+                <td>30</td>
+                <td>3</td>
+                <td>Mon Oct 24 2011 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>Biography of Steve Jobs</td>
+                <td>https://example.com/steve-jobs.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>9781524763138</td>
+                <td>Becoming</td>
+                <td>19.99</td>
+                <td>85</td>
+                <td>1</td>
+                <td>Tue Nov 13 2018 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>Memoir by Michelle Obama</td>
+                <td>https://example.com/becoming.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>9780439358071</td>
+                <td>Harry Potter and the Order of the Phoenix</td>
+                <td>15.99</td>
+                <td>42</td>
+                <td>1</td>
+                <td>Sat Jun 21 2003 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>The fifth book in the Harry Potter series</td>
+                <td>https://example.com/harry-potter-5.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>9780062316097</td>
+                <td>Sapiens</td>
+                <td>16.49</td>
+                <td>38</td>
+                <td>2</td>
+                <td>Sat Jan 01 2011 00:00:00 GMT+0530 (India Standard Time)</td>
+                <td>A Brief History of Humankind</td>
+                <td>https://example.com/sapiens.jpg</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:00:22 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>192834437582034</td>
+                <td>Ikigai</td>
+                <td>200.00</td>
+                <td>NULL</td>
+                <td>NULL</td>
+                <td>NULL</td>
+                <td>Mental pece</td>
+                <td>NULL</td>
+                <td>Fri Nov 21 2025 11:11:17 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:11:17 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>efsdwefergr3r2312</td>
+                <td>Hello</td>
+                <td>200.00</td>
+                <td>NULL</td>
+                <td>NULL</td>
+                <td>NULL</td>
+                <td>na</td>
+                <td>NULL</td>
+                <td>Fri Nov 21 2025 11:22:14 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:22:14 GMT+0530 (India Standard Time)</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>912839y92341</td>
+                <td>Na</td>
+                <td>200.00</td>
+                <td>NULL</td>
+                <td>NULL</td>
+                <td>NULL</td>
+                <td>na</td>
+                <td>NULL</td>
+                <td>Fri Nov 21 2025 11:48:23 GMT+0530 (India Standard Time)</td>
+                <td>Fri Nov 21 2025 11:56:06 GMT+0530 (India Standard Time)</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="meta">Generated: 21/11/2025, 12:09:38 pm</div>
+</body>
+</html>
