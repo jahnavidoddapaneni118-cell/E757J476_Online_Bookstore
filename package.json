@@ -1,0 +1,35 @@
+{
+  "name": "online-bookstore",
+  "version": "1.0.0",
+  "description": "CS 665 Database Project - Online Bookstore Management System",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "dev:backend": "npm start --prefix backend",
+    "dev:frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:frontend": "npm run build --prefix frontend",
+    "setup:env": "echo Creating environment files... && copy backend\\.env.example backend\\.env && copy frontend\\.env.example frontend\\.env",
+    "setup:db": "echo Please run: psql -U your_username -d bookstore_db -f schema.sql",
+    "setup": "npm run install:all && npm run setup:env",
+    "start:backend": "npm start --prefix backend",
+    "start:frontend": "npm start --prefix frontend"
+  },
+  "keywords": [
+    "bookstore",
+    "database",
+    "cs665",
+    "react",
+    "nodejs",
+    "postgresql"
+  ],
+  "author": "CS 665 Student",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "your-repo-url-here"
+  }
+}
